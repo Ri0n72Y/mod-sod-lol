@@ -46,18 +46,21 @@ internal static class CaitlynBasicAttackPatch
         nameof(Actor.DoBasicAttackHit),
         new Type[]
         {
+            typeof(Actor),
+            typeof(Entity),
             typeof(Entity),
             typeof(bool),
             typeof(bool),
             typeof(float),
-            typeof(float)
+            typeof(float),
+            typeof(ActionRef<DamageData>)
         })]
     private static void DoBasicAttackHitPostfix(
         Actor __instance,
-        Entity target,
+        Entity to,
         bool isMain)
     {
         Hero hero = __instance as Hero ?? __instance?.firstEntity as Hero;
-        ModEntry.Instance?.Content?.Headshot.OnBasicAttackHit(hero, target, isMain);
+        ModEntry.Instance?.Content?.Headshot.OnBasicAttackHit(hero, to, isMain);
     }
 }
