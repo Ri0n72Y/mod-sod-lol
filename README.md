@@ -24,14 +24,14 @@ Phase 0 focuses on the content plumbing required before implementing the final c
 
 The active skills currently borrow selected Lacerta `TriggerConfig` data as **proxy behavior**. This is intentional: it lets us validate registration, equipping, casting and networking before replacing each proxy with Caitlyn-specific gameplay.
 
-## Known limitations
+## Current scope
 
 - Q/W/E/R do not implement their final Caitlyn mechanics yet.
 - Custom localization, icons, model, animations, VFX and audio are not wired yet.
-- Identity gating is currently run/team-wide: if any human player equips Headshot, the four experimental Memories enter the server loot pool. Per-player eligibility still needs an interaction/loot-context filter.
-- The profile registry currently adds temporary custom unlock keys while the mod is loaded; persistence behavior still needs an in-game test.
+- Identity gating is intentionally run/team-wide: if any human player equips Headshot, the four experimental Memories enter the shared server loot pool. Once generated, other players may also pick up and use them; player-exclusive eligibility is not a project requirement.
+- Profile persistence and runtime Mirror behavior remain subject to the Phase 0 in-game test matrix.
 
-See `docs/architecture.md` and `docs/test-plan.md`.
+See `docs/architecture.md`, `docs/test-plan.md`, and the dated test result reports under `docs/`.
 
 ## Asset policy
 
