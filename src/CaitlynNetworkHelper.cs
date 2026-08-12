@@ -11,10 +11,6 @@ internal static class CaitlynNetworkHelper
         "_assetId",
         BindingFlags.NonPublic | BindingFlags.Instance);
 
-    private static readonly FieldInfo IsSceneObjectField = typeof(NetworkIdentity).GetField(
-        "_isSceneObject",
-        BindingFlags.NonPublic | BindingFlags.Instance);
-
     private static readonly MethodInfo InitializeNetworkBehavioursMethod = typeof(NetworkIdentity).GetMethod(
         "InitializeNetworkBehaviours",
         BindingFlags.NonPublic | BindingFlags.Instance);
@@ -44,8 +40,10 @@ internal static class CaitlynNetworkHelper
                                    gameObject.AddComponent<NetworkIdentity>();
 
         AssetIdField.SetValue(identity, assetId);
+
+        // Current Shape of Dreams Mirror build has no _isSceneObject field.
+        // A zero sceneId identifies this runtime-created object as non-scene content.
         identity.sceneId = 0UL;
-        IsSceneObjectField.SetValue(identity, false);
         return identity;
     }
 
@@ -102,13 +100,6 @@ internal static class CaitlynNetworkHelper
             throw new MissingFieldException(
                 typeof(NetworkIdentity).FullName,
                 "_assetId");
-        }
-
-        if (IsSceneObjectField == null)
-        {
-            throw new MissingFieldException(
-                typeof(NetworkIdentity).FullName,
-                "_isSceneObject");
         }
 
         if (InitializeNetworkBehavioursMethod == null)
