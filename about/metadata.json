@@ -4,6 +4,6 @@
   "author": "Ri0n72Y contributors",
   "modVer": "0.0.1-experimental",
   "assemblies": [
-    "obj/Release/*.dll"
+    "bin/Release/*.dll"
   ]
 }
