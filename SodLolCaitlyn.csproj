@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6A331C9-7D21-4D02-8E68-43F15E07B810}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SodLolCaitlyn</RootNamespace>
+    <AssemblyName>SodLolCaitlyn</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <LangVersion>12</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="0Harmony"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\0Harmony.dll</HintPath></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\Assembly-CSharp.dll</HintPath></Reference>
+    <Reference Include="Dew.Contents"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\Dew.Contents.dll</HintPath></Reference>
+    <Reference Include="Dew.Core"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\Dew.Core.dll</HintPath></Reference>
+    <Reference Include="Dew.UI"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\Dew.UI.dll</HintPath></Reference>
+    <Reference Include="Mirror"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\Mirror.dll</HintPath></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\UnityEngine.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ShapeOfDreamsHome)\Shape of Dreams_Data\Managed\UnityEngine.CoreModule.dll</HintPath></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\CaitlynContent.cs" />
+    <Compile Include="src\CaitlynHeadshotController.cs" />
+    <Compile Include="src\CaitlynIdentityGate.cs" />
+    <Compile Include="src\CaitlynLoadoutInstaller.cs" />
+    <Compile Include="src\CaitlynNetworkHelper.cs" />
+    <Compile Include="src\CaitlynProfileRegistry.cs" />
+    <Compile Include="src\CaitlynResourceRegistry.cs" />
+    <Compile Include="src\CaitlynRuntimeClone.cs" />
+    <Compile Include="src\CaitlynSkillDefinition.cs" />
+    <Compile Include="src\CaitlynSkillTypes.cs" />
+    <Compile Include="src\ModEntry.cs" />
+    <Compile Include="src\patches\CaitlynPatches.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about\metadata.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

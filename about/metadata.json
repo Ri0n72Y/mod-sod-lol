@@ -1,0 +1,9 @@
+{
+  "id": "dev.ri0n72y.sodlol.caitlyn",
+  "name": "Lacerta: Caitlyn Identity Experiment",
+  "author": "Ri0n72Y contributors",
+  "modVer": "0.0.1-experimental",
+  "assemblies": [
+    "bin/Release/*.dll"
+  ]
+}

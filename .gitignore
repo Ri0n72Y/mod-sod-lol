@@ -1,1 +1,21 @@
 .reasonix/
+.idea/
+.vs/
+.vscode/
+*.user
+*.suo
+bin/
+obj/
+
+# Local Shape of Dreams game references / copied binaries
+lib/
+*.dll
+*.pdb
+
+# Third-party binary assets are reviewed before redistribution
+assets/**/*.bundle
+assets/**/*.assetbundle
+assets/**/*.fbx
+assets/**/*.wav
+assets/**/*.ogg
+assets/**/*.mp3
